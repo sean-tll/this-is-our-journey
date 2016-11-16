@@ -70,3 +70,9 @@ body{
 .flat-btn:hover {
   background: #ebebeb;
 }
+
+#carouselButtons {
+  right:0px;
+  position: absolute;
+  bottom: 0px;
+}
