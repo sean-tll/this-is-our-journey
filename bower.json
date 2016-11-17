@@ -1,0 +1,24 @@
+{
+  "name": "lamant",
+  "homepage": "https://github.com/sean-tll/this-is-our-journey",
+  "authors": [
+    "Tianshu Zhou"
+  ],
+  "description": "A journey sharing website",
+  "main": "index.html",
+  "keywords": [
+    "journey"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
