@@ -45,15 +45,20 @@ body{
     background: #1A237E;
 }
 
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
-.navbar-inverse .navbar-nav .open .dropdown-menu {
-    background-color: #303F9F;
-    color:#eeeeee;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
+.nav .dropdown .dropdown-menu> li> a:hover {
     color:#000000;
 }
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+
+.nav .dropdown .dropdown-menu > li > a,
+.nav .dropdown .dropdown-menu {
+  background-color: #303F9F;
+  color:#eeeeee;
+}
+
 
 .flat-btn {
   background: #ffffff;
