@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="tabApp">
 
 <head>
     <meta charset="utf-8">
@@ -29,11 +29,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-home"
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"
                      aria-hidden="true"></span> Home</a></li>
             <li><a href="aboutus.html"><span class="glyphicon glyphicon-info-sign"
                   aria-hidden="true"></span> About</a></li>
-            <li class="dropdown">
+            <li class="dropdown active">
                 <a href="gallery.html" class="dropdown-toggle"
                  role="button" aria-haspopup="true" aria-expanded="false">
                  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
@@ -110,6 +110,22 @@
       </div>
   </header>
 
+  <div class="container">
+    <div class="row row-content" ng-controller="tabController as tabCtrl">
+      <ul class="nav nav-tabs">
+        <li role="presentation"><a href="#">All trips</a></li>
+        <li role="presentation"><a href="#">2015</a></li>
+        <li role="presentation"><a href="#">2016</a></li>
+      </ul>
+      <div class="tab-content">
+         <ul class="media-list tab-pane fade in active">
+             <li class="media" ng-repeat="tab in tabCtrl.dishes">
+               <h2>{{tab.description}}</h2>
+         </ul>
+      </div>
+    </div>
+  </div>
+
   <footer class="row-footer">
       <div class="container">
           <div class="row">
@@ -149,9 +165,57 @@
           </div>
       </div>
   </footer>
-  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+
+        var app = angular.module('tabApp',[]);
+        app.controller('tabController', function(){
+          var dishes=[
+             {
+               name:'Uthapizza',
+               image: 'images/uthapizza.png',
+               category: 'mains',
+               label:'Hot',
+               price:'4.99',
+               description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+               comment: ''
+            },
+            {
+               name:'Zucchipakoda',
+               image: 'images/zucchipakoda.png',
+               category: 'appetizer',
+               label:'',
+               price:'1.99',
+               description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
+               comment: ''
+            },
+            {
+               name:'Vadonut',
+               image: 'images/vadonut.png',
+               category: 'appetizer',
+               label:'New',
+               price:'1.99',
+               description:'A quintessential ConFusion experience, is it a vada or is it a donut?',
+               comment: ''
+            },
+            {
+               name:'ElaiCheese Cake',
+               image: 'images/elaicheesecake.png',
+               category: 'dessert',
+               label:'',
+               price:'2.99',
+               description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms',
+               comment: ''
+            }
+            ];
+
+            this.dishes = dishes;
+
+        })
+
+  </script>
 </body>
 
 </html>
