@@ -118,9 +118,9 @@
         </ol>
       </div>
       <ul class="nav nav-tabs">
-        <li role="presentation"><a href="#">All trips</a></li>
-        <li role="presentation"><a href="#">2015</a></li>
-        <li role="presentation"><a href="#">2016</a></li>
+        <li ng-class="{active:tabCtrl.isSelected(1)}"><a ng-click="tabCtrl.select(1)">All trips</a></li>
+        <li ng-class="{active:tabCtrl.isSelected(2)}"><a ng-click="tabCtrl.select(2)">2015</a></li>
+        <li ng-class="{active:tabCtrl.isSelected(3)}"><a ng-click="tabCtrl.select(3)">2016</a></li>
       </ul>
       <div class="tab-content">
          <ul class="media-list tab-pane fade in active">
@@ -199,6 +199,16 @@
             ];
 
             this.trips = trips;
+            this.tab = 1;
+
+            this.select = function(setTab) {
+                this.tab = setTab;
+            }
+
+            this.isSelected = function (checkTab) {
+                return (this.tab === checkTab);
+            }
+
 
         })
 
