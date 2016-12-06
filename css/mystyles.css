@@ -34,19 +34,22 @@ body{
     z-index:0;
 }
 
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+
 .navbar-inverse {
-     background: #303F9F;
+     background: #b991a4;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #fff;
-    background: #1A237E;
+    background: #b991a4;
 }
 
 .nav .dropdown .dropdown-menu> li> a:hover {
-    color:#000000;
+    background: #c8a7b7;
 }
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
@@ -55,8 +58,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 .nav .dropdown .dropdown-menu > li > a,
 .nav .dropdown .dropdown-menu {
-  background-color: #303F9F;
-  color:#eeeeee;
+  background-color: #c49ab0;
+  color: #fff;
 }
 
 
