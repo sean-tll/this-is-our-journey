@@ -23,6 +23,15 @@
     color:floralwhite;
 }
 
+.open-sans{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
 address{
     font-size:80%;
     margin:0px;
