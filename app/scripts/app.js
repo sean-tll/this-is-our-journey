@@ -43,4 +43,4 @@ angular.module('tabApp',[]).controller('tabController', function(){
         return (this.tab === checkTab);
     }
 
-})
+});
