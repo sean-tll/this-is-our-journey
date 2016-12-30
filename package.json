@@ -2,7 +2,7 @@
   "name": "this_is_our_journey",
   "private": true,
   "devDependencies": {
-
+    "grunt": "^1.0.1"
   },
   "engines": {
     "node": ">=0.10.0"
