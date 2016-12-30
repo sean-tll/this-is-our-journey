@@ -1,0 +1,10 @@
+{
+  "name": this_is_our_journey,
+  "private": true,
+  "devDependencies": {
+
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
