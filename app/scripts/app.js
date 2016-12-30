@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('tabApp',[]).controller('tabController', function(){
 
@@ -31,16 +31,22 @@ angular.module('tabApp',[]).controller('tabController', function(){
     this.select = function(setTab) {
         this.tab = setTab;
 
-        if (setTab === 2)
-            this.filtText = "2015";
-        else if (setTab === 3)
-            this.filtText = "2016";
-        else
-            this.filtText = "";
-    }
+        if (setTab === 2) {
+          this.filtText = "2015";
+        }
+
+        else if (setTab === 3) {
+          this.filtText = "2016";
+        }
+
+        else {
+          this.filtText = "";
+        }
+
+    };
 
     this.isSelected = function (checkTab) {
         return (this.tab === checkTab);
-    }
+    };
 
 });
