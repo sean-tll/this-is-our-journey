@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>This is our journey</title>
-    
     <!-- build:css styles/main.css -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -19,7 +18,7 @@
 
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,13 +27,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img alt="Brand" src="img/logo.png"></a>
+            <a class="navbar-brand" href="index.html"><img alt="Brand" class="img-responsive" src="img/Logo.png" style="height:25px"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html"><span class="glyphicon glyphicon-home"
+            <li><a class="hvr-underline-from-center" href="#"><span class="glyphicon glyphicon-home"
                      aria-hidden="true"></span> Home</a></li>
-            <li><a href="aboutus.html"><span class="glyphicon glyphicon-info-sign"
+            <li><a href="aboutus.html" class="hvr-underline-from-center"><span class="glyphicon glyphicon-info-sign"
                   aria-hidden="true"></span> About</a></li>
             <li class="dropdown active">
                 <a href="gallery.html" class="dropdown-toggle"
@@ -42,16 +41,16 @@
                  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                  Gallery <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="japan.html">Japan</a></li>
-                    <li><a href="#">Thailand</a></li>
-                    <li><a href="#">Around Europe</a></li>
+                    <li><a href="japan.html">JAPAN</a></li>
+                    <li><a href="#">THAILAND</a></li>
+                    <li><a href="#">AROUND EUROPE</a></li>
                     <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Planned journey</li>
-                    <li><a href="#">Great Canyon</a></li>
-                    <li><a href="#">Alaska</a></li>
+                    <li class="dropdown-header" style="color: #dedede"><span class="glyphicon glyphicon-heart"></span> Planned journey</li>
+                    <li><a href="#">GREAT CANYON</a></li>
+                    <li><a href="#">ALASKA</a></li>
                 </ul>
             </li>
-            <li><a href="contactus.html"><span class="glyphicon glyphicon-comment"></span> Contact</a></li>
+            <li><a href="contactus.html" class="hvr-underline-from-center"><span class="glyphicon glyphicon-comment"></span> Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a data-toggle="modal" data-target="#loginModal">
@@ -62,6 +61,7 @@
       </div>
     </div>
   </nav>
+
   <div id="loginModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -99,7 +99,9 @@
     </div>
   </div>
 
-  <header class="jumbotron">
+  <img class="img-responsive" src="img/header.jpeg">
+
+  <!-- <header class="jumbotron">
       <div class="container">
           <div class="row">
               <div class="col-xs-12 col-sm-8">
@@ -111,7 +113,8 @@
               </div>
           </div>
       </div>
-  </header>
+  </header> -->
+
 
   <div class="container">
     <div class="row row-content" ng-controller="tabController as tabCtrl">
@@ -185,9 +188,9 @@
           </div>
       </div>
   </footer>
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script>
 
         var app = angular.module('tabApp',[]);
