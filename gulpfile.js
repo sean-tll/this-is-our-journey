@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
+    ngannotate = require('gulp-ng-annotate');
     del = require('del');
     flatmap = require('gulp-flatmap');
 
@@ -37,7 +38,7 @@ gulp.task('usemin',['jshint'], function () {
         return stream
         .pipe(usemin({
           css:[minifycss(),rev()],
-          js: [uglify(),rev()]
+          js: [ngannotate(),uglify(),rev()]
         }))
         .pipe(gulp.dest('dist/'));
     }))
