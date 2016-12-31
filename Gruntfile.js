@@ -135,7 +135,7 @@ module.exports = function (grunt) {
         files: [
           'app/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          'app/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          'app/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
           base:{
             path: 'dist',
             options: {
-              index: 'menu.html',
+              index: 'index.html',
               maxAge: 300000
             }
           }
