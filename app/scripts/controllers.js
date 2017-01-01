@@ -1,33 +1,12 @@
 'use strict';
 
-angular.module('tabApp').controller('TabController', ['$scope', function($scope){
+angular.module('tabApp').controller('TabController', ['$scope', 'TabFactory', function($scope, TabFactory){
 
-  $scope.tab = 1;
-  $scope.filtText = '';
-  $scope.showDetails = false;
+    $scope.tab = 1;
+    $scope.filtText = '';
+    $scope.showDetails = false;
 
-  var trips=[
-     {
-       name:'Europe',
-       image: 'img/france.png',
-       category: '2015',
-       description:'A single trip of Tianshu, covering four European countries and over 10 amazing cities.',
-    },
-    {
-       name:'Thailand',
-       image: 'img/thailand.png',
-       category: '2016',
-       description:'The wonderful journey with sun, sand beaches, snorkelling, endless fruits and incredible Thai seafood.',
-    },
-    {
-       name:'Japan',
-       image: 'img/japan.png',
-       category: '2016',
-       description:'A unique experience with Japanese cuisine, Onsen (Japanese hot spring), hiragana and shopping.',
-    },
-    ];
-
-    $scope.trips = trips;
+    $scope.trips = TabFactory.getTrips();
 
     $scope.select = function(setTab) {
         $scope.tab = setTab;
