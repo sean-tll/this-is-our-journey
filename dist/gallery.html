@@ -112,35 +112,39 @@
 
 
   <div class="container">
-    <div class="row row-content" ng-controller="tabController as tabCtrl">
+    <div class="row row-content" ng-controller="TabController">
       <div class="col-xs-12">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item active">Gallery</li>
         </ol>
       </div>
-      <div>
+      <div class="col-xs-12">
+        <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" type="button">
+          {{showDetails ? 'Hide Details':'Show Details'}}
+        </button>
         <ul class="nav nav-tabs">
-          <li ng-class="{active:tabCtrl.isSelected(1)}"><a ng-click="tabCtrl.select(1)">All trips</a></li>
-          <li ng-class="{active:tabCtrl.isSelected(2)}"><a ng-click="tabCtrl.select(2)">2015</a></li>
-          <li ng-class="{active:tabCtrl.isSelected(3)}"><a ng-click="tabCtrl.select(3)">2016</a></li>
+          <li ng-class="{active:isSelected(1)}"><a ng-click="select(1)">All trips</a></li>
+          <li ng-class="{active:isSelected(2)}"><a ng-click="select(2)">2015</a></li>
+          <li ng-class="{active:isSelected(3)}"><a ng-click="select(3)">2016</a></li>
         </ul>
         <br>
-      <div class="tab-content">
-         <ul class="media-list tab-pane fade in active">
-             <li class="media" ng-repeat="tab in tabCtrl.trips | filter: tabCtrl.filtText">
-               <div class="media-left">
-                <a href="#">
-                  <img class="media-object" src={{tab.image}} style="height:100px; width:100px">
-                </a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">{{tab.name}}</h4>
-                {{tab.description}}
-              </div>
-         </ul>
+        <div class="tab-content">
+           <ul class="media-list tab-pane fade in active">
+               <li class="media" ng-repeat="tab in trips | filter: filtText">
+                 <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" ng-src={{tab.image}} style="height:100px; width:100px">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">{{tab.name}}</h4>
+                  <p ng-show="showDetails">
+                  {{tab.description}} </p>
+                </div>
+           </ul>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 
@@ -184,7 +188,7 @@
       </div>
   </footer>
 
-  <script src="scripts/main-2d398b812b.js"></script>
+  <script src="scripts/main-79ed28dcf6.js"></script>
 
 </body>
 

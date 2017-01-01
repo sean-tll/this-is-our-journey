@@ -52,7 +52,7 @@ angular.module('tabApp',[]).controller('TabController', ['$scope', function($sco
 
     $scope.toggleDetails = function() {
         $scope.showDetails = !$scope.showDetails;
-    }
+    };
 
 }])
 
@@ -68,7 +68,7 @@ angular.module('tabApp',[]).controller('TabController', ['$scope', function($sco
 
     $scope.sendFeedback = function() {
       console.log($scope.feedback);
-      if ($scope.feedback.agree && ($scope.feedback.mychannel == "")&& !$scope.feedback.mychannel) {
+      if ($scope.feedback.agree && ($scope.feedback.mychannel === "")&& !$scope.feedback.mychannel) {
         $scope.invalidChannelSelection = true;
         console.log('incorrect');
       }
