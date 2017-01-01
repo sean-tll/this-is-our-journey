@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>This is our journey</title>
-    <link rel="stylesheet" href="styles/main-b8f9ae0c37.css"/>
+    <!-- build:css styles/main.css -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
+    <!-- endbuild -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 </head>
-
 
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom open-sans" role="navigation">
@@ -26,12 +31,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a class="hvr-underline-from-center" href="#"><span class="glyphicon glyphicon-home"
+            <li><a class="hvr-underline-from-center" href="index.html"><span class="glyphicon glyphicon-home"
                      aria-hidden="true"></span> Home</a></li>
             <li><a href="aboutus.html" class="hvr-underline-from-center"><span class="glyphicon glyphicon-info-sign"
                   aria-hidden="true"></span> About</a></li>
             <li class="dropdown active">
-                <a href="gallery.html" class="dropdown-toggle"
+                <a href="gallery_spa.html" class="dropdown-toggle"
                  role="button" aria-haspopup="true" aria-expanded="false">
                  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                  Gallery <span class="caret"></span></a>
@@ -110,43 +115,7 @@
       </div>
   </header> -->
 
-
-  <div class="container">
-    <div class="row row-content" ng-controller="TabController">
-      <div class="col-xs-12">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Gallery</li>
-        </ol>
-      </div>
-      <div class="col-xs-12">
-        <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" type="button">
-          {{showDetails ? 'Hide Details':'Show Details'}}
-        </button>
-        <ul class="nav nav-tabs">
-          <li ng-class="{active:isSelected(1)}"><a ng-click="select(1)">All trips</a></li>
-          <li ng-class="{active:isSelected(2)}"><a ng-click="select(2)">2015</a></li>
-          <li ng-class="{active:isSelected(3)}"><a ng-click="select(3)">2016</a></li>
-        </ul>
-        <br>
-        <div class="tab-content">
-           <ul class="media-list tab-pane fade in active">
-               <li class="media" ng-repeat="tab in trips | filter: filtText">
-                 <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" ng-src={{tab.image}} style="height:100px; width:100px">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h4 class="media-heading">{{tab.name}}</h4>
-                  <p ng-show="showDetails">
-                  {{tab.description}} </p>
-                </div>
-           </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ng-view></ng-view>
 
   <footer class="row-footer">
       <div class="container">
@@ -188,7 +157,16 @@
       </div>
   </footer>
 
-  <script src="scripts/main-b773b08dad.js"></script>
+  <!-- build:js scripts/main.js -->
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers.js"></script>
+  <script src="scripts/services.js"></script>
+
+  <!-- endbuild -->
 
 </body>
 
