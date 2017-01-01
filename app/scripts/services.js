@@ -25,7 +25,7 @@ angular.module('tabApp').factory('TabFactory', function(){
        image: 'img/japan.png',
        category: '2016',
        description:'A unique experience with Japanese cuisine, Onsen (Japanese hot spring), hiragana and shopping.',
-       spa_loc: 'japan_spa'
+       spa_loc: 'japan'
     },
     ];
 

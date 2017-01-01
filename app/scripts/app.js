@@ -5,12 +5,12 @@ angular.module('tabApp', ['ngRoute'])
     // console.log($routeProvider);
     $routeProvider
       // route for Japan page
-      .when('/japan_spa', {
-        templateUrl : 'japan_spa.html',
+      .when('/japan', {
+        templateUrl : 'japan.html',
         // controller  : 'ContactController'
       })
       .when('/main', {
-        templateUrl : 'gallery_spa_main.html',
+        templateUrl : 'gallery_main.html',
         controller  : 'TabController'
       })
       .otherwise('/main');
