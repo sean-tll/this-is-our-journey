@@ -2,8 +2,8 @@
   <div class="row row-content">
     <div class="col-xs-12">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="gallery.html">Gallery</a></li>
+        <li class="breadcrumb-item"><a ui-sref="app">Home</a></li>
+        <li class="breadcrumb-item"><a ui-sref="app.gallery">Gallery</a></li>
         <li class="breadcrumb-item active">Japan</li>
       </ol>
     </div>
@@ -42,14 +42,14 @@
         </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+        <span class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+        </span>
+        <span class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-        </a>
+        </span>
         <div class="btn-group" id="carouselButtons">
             <button class="btn btn-info btn-xs" id="carousel-pause">
               <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
@@ -61,3 +61,15 @@
       </div>
   </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $("#mycarousel").carousel( { interval: 2000 } );
+        $("#carousel-pause").click(function(){
+            $("#mycarousel").carousel('pause');
+        });
+        $("#carousel-play").click(function(){
+            $("#mycarousel").carousel('cycle');
+        });
+    });
+</script>

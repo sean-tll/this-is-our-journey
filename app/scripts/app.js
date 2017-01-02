@@ -46,6 +46,14 @@ angular.module('tabApp', ['ui.router'])
                    }
               }
           })
+          .state('app.japan', {
+              url:'japan',
+              views: {
+                  'content@': {
+                      templateUrl : 'views/japan.html'
+                   }
+              }
+          });
 
           $urlRouterProvider.otherwise('/');
 

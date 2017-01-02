@@ -2,7 +2,7 @@
   <div class="row row-content" ng-controller="TabController">
     <div class="col-xs-12">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a ui-sref="app">Home</a></li>
         <li class="breadcrumb-item active">Gallery</li>
       </ol>
     </div>
@@ -20,7 +20,7 @@
          <ul class="media-list tab-pane fade in active">
              <li class="media" ng-repeat="tab in trips | filter: filtText">
                <div class="media-left">
-                <a ng-href="#!/{{tab.spa_loc}}">
+                <a ui-sref="app.{{tab.spa_loc}}">
                   <img class="media-object" ng-src={{tab.image}} style="height:100px; width:100px">
                 </a>
               </div>

@@ -29,7 +29,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('usemin', 'imagemin','copyfonts');
+    gulp.start('usemin', 'imagemin', 'copyfonts', 'copy-views');
 });
 
 gulp.task('usemin',['jshint'], function () {
@@ -42,6 +42,12 @@ gulp.task('usemin',['jshint'], function () {
         }))
         .pipe(gulp.dest('dist/'));
     }))
+});
+
+// copy views
+gulp.task('copy-views', function(){
+  gulp.src('app/views/*.html')
+  .pipe(gulp.dest('dist/views'));
 });
 
 // Images
