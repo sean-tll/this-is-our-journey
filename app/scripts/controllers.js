@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('tabApp').controller('TabController', ['$scope', 'TabFactory', function($scope, TabFactory){
+angular.module('tabApp')
+  .controller('TabController', ['$scope', 'TabFactory', function($scope, TabFactory){
 
     $scope.tab = 1;
     $scope.filtText = '';
