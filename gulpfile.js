@@ -33,7 +33,7 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('usemin',['jshint'], function () {
-  return gulp.src('app/*.html')
+  return gulp.src('./app/**/*.htm')
     .pipe(flatmap(function (stream, file) {
         return stream
         .pipe(usemin({
@@ -43,6 +43,15 @@ gulp.task('usemin',['jshint'], function () {
         .pipe(gulp.dest('dist/'));
     }))
 });
+
+// gulp.task('usemin',['jshint'], function () {
+//   return gulp.src('./app/**/*.html')
+//       .pipe(usemin({
+//         css:[minifycss(),rev()],
+//         js: [ngannotate(),uglify(),rev()]
+//       }))
+//       .pipe(gulp.dest('dist/'));
+// });
 
 // copy views
 gulp.task('copy-views', function(){
