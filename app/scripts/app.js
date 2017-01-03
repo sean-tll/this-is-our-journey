@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tabApp', ['ui.router'])
+angular.module('tabApp', ['ui.router', 'ngResource'])
 .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
                   // route for the home page

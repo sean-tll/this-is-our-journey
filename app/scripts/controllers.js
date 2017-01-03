@@ -7,7 +7,18 @@ angular.module('tabApp')
     $scope.filtText = '';
     $scope.showDetails = false;
 
-    $scope.trips = TabFactory.getTrips();
+    $scope.showTrip = false;
+    $scope.message = "Loading ...";
+
+    TabFactory.getTrips().query(
+      function(response){
+        $scope.showTrip = true;
+        $scope.trips = response;
+      },
+      function(response){
+        $scope.message = "Error: "+response.status + " " + response.statusText;
+      }
+    );
 
     $scope.select = function(setTab) {
         $scope.tab = setTab;

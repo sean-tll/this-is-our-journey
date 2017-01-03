@@ -1,42 +1,10 @@
 'use strict';
 
-angular.module('tabApp').factory('TabFactory', function(){
+angular.module('tabApp').constant("baseURL","http://localhost:3000/")
+  .service('TabFactory', ['$resource', 'baseURL', function($resource, baseURL){
 
-  var tabfac = {};
+    this.getTrips = function(){
+      return $resource(baseURL+"trips/:id",null,  {'update':{method:'PUT' }});
+    };
 
-  var trips = [
-     {
-       _id: 0,
-       name:'Europe',
-       image: 'img/france.png',
-       category: '2015',
-       description:'A single trip of Tianshu, covering four European countries and over 10 amazing cities.',
-    },
-    {
-       _id: 1,
-       name:'Thailand',
-       image: 'img/thailand.png',
-       category: '2016',
-       description:'The wonderful journey with sun, sand beaches, snorkelling, endless fruits and incredible Thai seafood.',
-    },
-    {
-       _id: 2,
-       name:'Japan',
-       image: 'img/japan.png',
-       category: '2016',
-       description:'A unique experience with Japanese cuisine, Onsen (Japanese hot spring), hiragana and shopping.',
-       spa_loc: 'japan'
-    },
-    ];
-
-  tabfac.getTrips = function(){
-    return trips;
-  };
-
-  tabfac.getTrip = function(index){
-    return trips[index];
-  };
-
-  return tabfac;
-
-});
+}]);
