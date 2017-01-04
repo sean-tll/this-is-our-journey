@@ -10,8 +10,6 @@ angular.module('tabApp')
     $scope.showTrip = false;
     $scope.message = "Loading ...";
 
-    // $scope.trips = TabFactoryOffline.getTrips();
-
     TabFactory.getTrips().query(
       function(response){
         $scope.showTrip = true;
@@ -49,7 +47,7 @@ angular.module('tabApp')
         $scope.showDetails = !$scope.showDetails;
     };
 
-}])
+  }])
 
   .controller('ContactController', ['$scope', function($scope) {
     $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:""};
@@ -78,4 +76,24 @@ angular.module('tabApp')
        }
     };
 
-}]);
+  }])
+
+  .controller('TripGalleryController', ['$scope', function($scope){
+    $scope.showTrip = false;
+    $scope.message = "Loading ...";
+
+    TabFactory.getTrips().query(
+      function(response){
+        $scope.showTrip = true;
+        $scope.trips = response;
+      },
+      function(response){
+        console.log("offline mode");
+        $scope.showTrip = true;
+        $scope.trips = TabFactoryOffline.getTrips();
+      }
+    );
+  }])
+
+
+  ;

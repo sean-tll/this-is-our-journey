@@ -50,7 +50,8 @@ angular.module('tabApp', ['ui.router', 'ngResource'])
               url:'japan',
               views: {
                   'content@': {
-                      templateUrl : 'views/japan.html'
+                      templateUrl : 'views/japan.html',
+                      controller  : 'TripGalleryController'
                    }
               }
           });
