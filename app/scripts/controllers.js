@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tabApp')
-  .controller('TabController', ['$scope', 'TabFactory', function($scope, TabFactory){
+  .controller('TabController', ['$scope', 'TabFactory', 'TabFactoryOffline', function($scope, TabFactory, TabFactoryOffline){
 
     $scope.tab = 1;
     $scope.filtText = '';
@@ -10,13 +10,17 @@ angular.module('tabApp')
     $scope.showTrip = false;
     $scope.message = "Loading ...";
 
+    // $scope.trips = TabFactoryOffline.getTrips();
+
     TabFactory.getTrips().query(
       function(response){
         $scope.showTrip = true;
         $scope.trips = response;
       },
       function(response){
-        $scope.message = "Error: "+response.status + " " + response.statusText;
+        console.log("offline mode");
+        $scope.showTrip = true;
+        $scope.trips = TabFactoryOffline.getTrips();
       }
     );
 
