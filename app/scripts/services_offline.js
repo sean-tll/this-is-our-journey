@@ -24,7 +24,6 @@ angular.module('tabApp')
         "image": "img/japan.png",
         "category": "2016",
         "description":"A unique experience with Japanese cuisine, Onsen (Japanese hot spring), hiragana and shopping.",
-        "spa_loc": "japan",
         "images": ["IMG_3286.png", "IMG_3388.png", "IMG_3433.png"]
       }
     ];
