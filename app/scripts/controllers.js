@@ -78,21 +78,22 @@ angular.module('tabApp')
 
   }])
 
-  .controller('TripGalleryController', ['$scope', function($scope){
+  .controller('TripGalleryController', ['$scope', '$stateParams', 'TabFactory', 'TabFactoryOffline', function($scope, $stateParams, TabFactory, TabFactoryOffline){
     $scope.showTrip = false;
     $scope.message = "Loading ...";
 
     TabFactory.getTrips().query(
       function(response){
         $scope.showTrip = true;
-        $scope.trips = response;
+        $scope.trip = response;
       },
       function(response){
         console.log("offline mode");
         $scope.showTrip = true;
-        $scope.trips = TabFactoryOffline.getTrips();
+        $scope.trip = TabFactoryOffline.getTrip(parseInt($stateParams.id, 10));
       }
     );
+
   }])
 
 
