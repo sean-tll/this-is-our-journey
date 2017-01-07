@@ -97,7 +97,7 @@ angular.module('tabApp')
   }])
 
   .controller('HeaderController', ['$scope', function($scope) {
-    
+
     $('.navbar-collapse ul li a').click(function() {
       $(".navbar-collapse").collapse('hide');
     });
