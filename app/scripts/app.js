@@ -8,7 +8,8 @@ angular.module('tabApp', ['ui.router', 'ngResource'])
               url:'/',
               views: {
                   'header': {
-                      templateUrl : 'views/header.html'
+                      templateUrl : 'views/header.html',
+                      controller  : 'HeaderController'
                   },
                   'content': {
                       templateUrl : 'views/main.html',
