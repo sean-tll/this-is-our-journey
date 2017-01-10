@@ -47,21 +47,21 @@ angular.module('tabApp', ['ui.router', 'ngResource'])
                    }
               }
           })
-          // .state('app.japan', {
-          //     url:'japan',
-          //     views: {
-          //         'content@': {
-          //             templateUrl : 'views/japan.html',
-          //             controller  : 'TripGalleryController'
-          //          }
-          //     }
-          // })
           .state('app.trip', {
               url:'gallery/:id',
               views: {
                   'content@': {
                       templateUrl : 'views/trip.html',
                       controller  : 'TripGalleryController'
+                   }
+              }
+          })
+          .state('app.map', {
+              url:'map',
+              views: {
+                  'content@': {
+                      templateUrl : 'views/map.html',
+                      controller  : 'MapController'
                    }
               }
           });

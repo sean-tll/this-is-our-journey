@@ -36,4 +36,10 @@ angular.module('tabApp')
       return trips[index];
     };
 
-});
+})
+  .service('MapFactoryOffline', function($http){
+
+    return $http.get('data/japan.json');
+
+  })
+;

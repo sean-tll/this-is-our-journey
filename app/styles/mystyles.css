@@ -127,3 +127,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   position: absolute;
   bottom: 0px;
 }
+
+#mapid {
+  height: 380px;
+
+}
