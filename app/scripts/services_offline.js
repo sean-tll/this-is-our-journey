@@ -22,9 +22,15 @@ angular.module('tabApp')
         "id": 2,
         "name":"Japan",
         "image": "img/japan.png",
+        "imageFolder": [
+          "05a96983433288b04a11b68f91f31f76",
+          "4a48d56c37405e578c8414389fc613bc",
+          "b029f183eab03ee20d2514f4b8e9c9f3",
+          "fe2ad8c932825ab2ed866b67d7516b8b",
+        ],
         "category": "2016",
         "description":"A unique experience with Japanese cuisine, Onsen (Japanese hot spring), hiragana and shopping.",
-        "images": ["IMG_3286.png", "IMG_3388.png", "IMG_3433.png"]
+        "imageNumbers": [4, 5, 3, 3]
       }
     ];
 
