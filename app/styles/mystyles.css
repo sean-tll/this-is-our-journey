@@ -130,5 +130,11 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 #mapid {
   height: 420px;
-
 }
+
+/*.carousel-inner .item img {
+  text-align: center;
+  width: auto;
+  height: 500px;
+  max-height: 500px
+}*/
